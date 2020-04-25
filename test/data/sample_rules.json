@@ -1,0 +1,71 @@
+{
+  "rules": [
+    {
+      "id": "14e56445-ebab-4dd0-ba9d-fc28a41b7e7b",
+      "position": 0,
+      "disabled": false,
+      "catch_all": false,
+      "self": "https://api.pagerduty.com/rulesets/0e84de00-9511-4380-9f4f-a7b568bb49a0/rules/14e56445-ebab-4dd0-ba9d-fc28a41b7e7b",
+      "conditions": {
+        "operator": "and",
+        "subconditions": [
+          {
+            "operator": "contains",
+            "parameters": {
+              "value": "mysql",
+              "path": "details.host"
+            }
+          }
+        ]
+      },
+      "time_frame": {
+        "active_between": {
+          "start_time": 1577880000000,
+          "end_time": 1580558400000
+        }
+      },
+      "actions": {
+        "annotate": {
+          "value": "This incident was created by a Global Event Rule"
+        },
+        "route": {
+          "value": "PI2KBWI"
+        },
+        "priority": {
+          "value": "PCMUB6F"
+        },
+        "severity": {
+          "value": "warning"
+        },
+        "extractions": [
+          {
+            "target": "dedup_key",
+            "source": "details.error_summary",
+            "regex": "Host (.*) is experiencing errors"
+          }
+        ]
+      }
+    },
+    {
+      "id": "0d819a5a-b714-4bae-9333-dc73ea0daefb",
+      "position": 1,
+      "disabled": false,
+      "catch_all": true,
+      "self": "https://api.pagerduty.com/rulesets/0e84de00-9511-4380-9f4f-a7b568bb49a0/rules/0d819a5a-b714-4bae-9333-dc73ea0daefb",
+      "actions": {
+        "suppress": {
+          "value": true
+        },
+        "severity": null,
+        "route": null,
+        "priority": null,
+        "extractions": [],
+        "event_action": null,
+        "annotate": null
+      }
+    }
+  ],
+  "limit": 25,
+  "offset": 0,
+  "more": false
+}

@@ -21,6 +21,7 @@ from .models.service import Service
 from .models.team import Team
 from .models.user import User
 from .models.vendor import Vendor
+from .models.rulesets import Rulesets
 
 api_key = None
 base_url = 'https://api.pagerduty.com'
